@@ -38,7 +38,5 @@ class click_jacking():
                 print1 = "it is vulnerable to clickjacking"
         print(r.headers)
         print(request.headers)
-        # js_data=request.form['']
-        print()
 
-        return render_template("scan.html", username=username, print1=print1, bool_flag=bool_flag)
+        return  username,print1,bool_flag
