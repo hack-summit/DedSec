@@ -31,7 +31,7 @@ class ip:
         print(host_name)
         a=socket.gethostbyname(host_name)
 
-        reader = geoip2.database.Reader('/Users/jaswa-zuch749/PycharmProjects/Learning/GeoLite2-City.mmdb')
+        reader = geoip2.database.Reader('/GeoLite2-City.mmdb') #Download this file to find the Location.
 
         response = reader.city(a)
         country=response.country.iso_code
