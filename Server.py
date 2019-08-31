@@ -3,6 +3,7 @@ import requests
 from requests import cookies
 
 from click_jacking import click_jacking
+from ip_add import ip
 
 app = Flask(__name__)
 
@@ -27,8 +28,13 @@ def about_night():
 @app.route('/scan')
 def scan():
 
-    c=click_jacking()
-    return c.click_jackingfun()
+    click=click_jacking()
+    b=click.click_jackingfun()
+
+    geo=ip()
+    c=geo.geo_Ip()
+
+    return render_template("scan.html",username=b[0],print1=b[1],bool_flag=b[2],ip=c[0],country=c[1],latitude=c[2],longitude=c[3],server=c[4])
 
 
 if __name__ == "__main__":
